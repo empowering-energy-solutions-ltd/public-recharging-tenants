@@ -1,0 +1,36 @@
+site_name: Recharging tenants
+
+theme:
+  name: "material"
+  
+plugins:
+  - mkdocstrings
+
+nav:
+  - 'Introduction': 'index.md'
+  - Documentation: 
+    - 'Data imports': 'import_data.md'
+    - 'Recharging tenants': 'report.md'
+
+theme:  
+  name: material
+  palette:
+    primary: cy
+    accent: purple
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+plugins:
+  - search
+  - mkdocstrings:
+      enabled: !ENV [ENABLE_MKDOCSTRINGS, true]
+      default_handler: python
+      handlers:
+        python: 
+          paths: [src]
+          options:
+            show_source: false
+
+extra_css:
+    - styles.css
